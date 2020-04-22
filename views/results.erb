@@ -6,6 +6,4 @@
 
 <h2>Consonants: <%= @analyzed_text.count_of_consonants %></h2>
 
-<% @analyzed_text.most_used_letter.each do |key, value| %>
-<h2>Most Common Letter: <%= "#{key.upcase}" %>, used <%= "#{value}" %> times</h2>
-<% end %>
+<h2>Most Common Letter: <%= @analyzed_text.most_used_letter.keys[0].upcase %>, used <%= @analyzed_text.most_used_letter.values[0] %> times</h2>

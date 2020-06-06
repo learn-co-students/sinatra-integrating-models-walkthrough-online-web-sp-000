@@ -1,4 +1,4 @@
-# Integrating Models Sinatra Code-along
+## Integrating Models Sinatra Code-along
 
 ## Overview
 

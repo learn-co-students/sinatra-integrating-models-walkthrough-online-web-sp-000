@@ -1,5 +1,5 @@
 # Your TextAnalyzer model code will go here.
-
+require 'pry'
 class TextAnalyzer
     attr_reader :text
    
@@ -46,6 +46,7 @@ class TextAnalyzer
           biggest = {}
           biggest[key] = value
         end
+        #binding.pry
       end
    
       biggest

@@ -24,14 +24,14 @@ class TextAnalyzer
   # counts the vowels from our #chars array
   def vowel_count
     chars.select { |e|
-      e if e.match(/[aAeEiIoOuU]/)
+      e if e.match(/[AEIOU]/)
     }.size
   end
 
   # counts the consonants from our #chars array
   def consonant_count
     chars.select { |e|
-      e unless e.match(/[aAeEiIoOuU]/)
+      e unless e.match(/[AEIOU]/)
     }.size
   end
 

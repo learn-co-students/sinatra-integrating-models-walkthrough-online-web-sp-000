@@ -1,9 +1,21 @@
 <h1>Your Text Analysis</h1>
 
-<h2>Number of Words: </h2>
+<h2>Number of Words: <%= params[:user_text].split.size %> </h2>
 
-<h2>Vowels: </h2>
+<h2>Vowels: <%= params[:user_text].downcase.count("aeiou")%> </h2>
 
-<h2>Consonants: </h2>
+<h2>Consonants: <%= params[:user_text].downcase.split(/[aeiou\W]/).join.length %> </h2>
 
-<h2>Most Common Letter: _____ used _____ times</h2>
+<%def most_common_letter(string)
+  string
+    .downcase
+    .gsub(/[^a-z]/, '')  # remove non-letters
+    .chars               # get characters
+    .group_by(&:itself)  # group them
+    .map { |letter, list| [letter, list.count] } # get their counts
+    .max_by(&:last)      # get the most common letter and its count
+end%>
+<%letter = most_common_letter(params[:user_text])[0].upcase
+number = most_common_letter(params[:user_text])[1]
+%>
+<h2>Most Common Letter: <%=letter%>, used <%=number%> times</h2>

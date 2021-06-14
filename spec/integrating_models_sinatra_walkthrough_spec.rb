@@ -24,6 +24,7 @@ describe App do
       expect(page).to have_text("Vowels: 5")
       expect(page).to have_text("Consonants: 10")
       expect(page).to have_text("Most Common Letter: G, used 3 times")
+      puts page
     end
   end
 
